@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListViewController">
+   <children>
+      <TableView fx:id="tableView" layoutX="82.0" layoutY="63.0" onMouseClicked="#userClickedOnTable" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="125.0" text="Name" />
+          <TableColumn fx:id="descriptionColumn" onEditCommit="#changeDescriptionCellEvent" prefWidth="200.0" text="Description" />
+            <TableColumn fx:id="dueDateColumn" onEditCommit="#changeDueDateEvent" prefWidth="131.0" text="Due date" />
+            <TableColumn fx:id="statusColumn" onEditCommit="#changeStatusEvent" prefWidth="125.0" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="detailedPersonViewButton" layoutX="534.0" layoutY="424.0" mnemonicParsing="false" onAction="#changeSceneToDetailedItemView" text="Detailed Item View" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+      <Button layoutX="373.0" layoutY="424.0" mnemonicParsing="false" onAction="#deleteButtonPushed" text="Remove Item" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="375.0" />
+      <Button layoutX="196.0" layoutY="424.0" mnemonicParsing="false" onAction="#newItemButtonPushed" text="Add new Item" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="196.0" />
+      <TextField fx:id="nameTextField" layoutX="50.0" layoutY="624.0" prefHeight="25.0" prefWidth="125.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+   </children>
+</AnchorPane>

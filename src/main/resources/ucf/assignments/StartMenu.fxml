@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.StartMenuController">
+   <children>
+      <Button layoutX="70.0" layoutY="58.0" mnemonicParsing="false" text="Load list" AnchorPane.topAnchor="50.0" />
+      <Button layoutX="53.0" layoutY="122.0" mnemonicParsing="false" onAction="#changeScreenButtonPushed" text="Create new list" AnchorPane.bottomAnchor="50.0" />
+   </children>
+</AnchorPane>
