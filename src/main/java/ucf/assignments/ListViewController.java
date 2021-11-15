@@ -104,21 +104,16 @@ public class ListViewController implements Initializable {
         }
     }
 
+    public void clearListButtonPushed(ActionEvent event)
+    {
+        tableView.getItems().clear();;
+    }
+
     public void newItemButtonPushed()
     {
         Item newPerson = new Item(nameTextField.getText());
 
         tableView.getItems().add(newPerson);
-    }
-
-    public ObservableList<Item>  getItem()
-    {
-        ObservableList<Item> items = FXCollections.observableArrayList();
-        items.add(new Item("Frank"));
-        items.add(new Item("Rebecca"));
-        items.add(new Item("Mr"));
-
-        return items;
     }
 
 }

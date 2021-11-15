@@ -8,13 +8,14 @@
       <TableView fx:id="tableView" layoutX="82.0" layoutY="63.0" onMouseClicked="#userClickedOnTable" prefHeight="700.0" prefWidth="1000.0" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="125.0" text="Name" />
-          <TableColumn fx:id="descriptionColumn" onEditCommit="#changeDescriptionCellEvent" prefWidth="200.0" text="Description" />
-            <TableColumn fx:id="dueDateColumn" onEditCommit="#changeDueDateEvent" prefWidth="131.0" text="Due date" />
-            <TableColumn fx:id="statusColumn" onEditCommit="#changeStatusEvent" prefWidth="125.0" text="Status" />
+          <TableColumn fx:id="descriptionColumn" onEditCommit="#changeDescriptionCellEvent" prefWidth="185.0" text="Description" />
+            <TableColumn fx:id="dueDateColumn" onEditCommit="#changeDueDateEvent" prefWidth="150.0" text="Due date (YYYY-MM-DD)" />
+            <TableColumn fx:id="statusColumn" onEditCommit="#changeStatusEvent" prefWidth="135.0" text="Complete / Incomplete" />
         </columns>
       </TableView>
       <Button fx:id="detailedPersonViewButton" layoutX="534.0" layoutY="424.0" mnemonicParsing="false" onAction="#changeSceneToDetailedItemView" text="Detailed Item View" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-      <Button layoutX="373.0" layoutY="424.0" mnemonicParsing="false" onAction="#deleteButtonPushed" text="Remove Item" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="375.0" />
+      <Button layoutX="321.0" layoutY="424.0" mnemonicParsing="false" onAction="#deleteButtonPushed" text="Remove Item" AnchorPane.bottomAnchor="50.666666666666686" AnchorPane.leftAnchor="321.0" />
+      <Button layoutX="442.0" layoutY="424.0" mnemonicParsing="false" onAction="#clearListButtonPushed" text="Clear List" />
       <Button layoutX="196.0" layoutY="424.0" mnemonicParsing="false" onAction="#newItemButtonPushed" text="Add new Item" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="196.0" />
       <TextField fx:id="nameTextField" layoutX="50.0" layoutY="624.0" prefHeight="25.0" prefWidth="125.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
    </children>
