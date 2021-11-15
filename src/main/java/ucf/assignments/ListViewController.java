@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,8 +32,11 @@ public class ListViewController implements Initializable {
     @FXML private TableColumn<Item, String> statusColumn;
 
     @FXML private TextField nameTextField;
+    @FXML private TextField filterField;
 
     @FXML private Button detailedPersonViewButton;
+
+    ObservableList<Item> list = FXCollections.observableArrayList();
 
     public void changeDescriptionCellEvent(CellEditEvent edittedCell)
     {
@@ -91,6 +95,26 @@ public class ListViewController implements Initializable {
         this.detailedPersonViewButton.setDisable(true);
     }
 
+    public void filterButtonPushed(ActionEvent event) // DOES NOT WORK
+    {
+
+        list = tableView.getItems();
+        FilteredList<Item> filteredData = new FilteredList<>(list, p -> true);
+
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(item -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                return item.getStatus().toLowerCase().contains(lowerCaseFilter);
+
+            });
+        });
+    }
+
     public void deleteButtonPushed()
     {
         ObservableList<Item> selectedRows, items;
@@ -111,9 +135,8 @@ public class ListViewController implements Initializable {
 
     public void newItemButtonPushed()
     {
-        Item newPerson = new Item(nameTextField.getText());
-
-        tableView.getItems().add(newPerson);
+        Item newItem = new Item(nameTextField.getText());
+        tableView.getItems().add(newItem);
     }
 
 }

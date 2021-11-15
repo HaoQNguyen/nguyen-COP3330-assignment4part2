@@ -18,5 +18,7 @@
       <Button layoutX="442.0" layoutY="424.0" mnemonicParsing="false" onAction="#clearListButtonPushed" text="Clear List" />
       <Button layoutX="196.0" layoutY="424.0" mnemonicParsing="false" onAction="#newItemButtonPushed" text="Add new Item" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="196.0" />
       <TextField fx:id="nameTextField" layoutX="50.0" layoutY="624.0" prefHeight="25.0" prefWidth="125.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+      <TextField fx:id="filterField" layoutX="510.0" layoutY="14.0" prefHeight="25.0" prefWidth="139.0" />
+      <Button layoutX="463.0" layoutY="14.0" mnemonicParsing="false" onAction="#filterButtonPushed" text="Filter" />
    </children>
 </AnchorPane>
