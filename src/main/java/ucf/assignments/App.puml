@@ -1,0 +1,69 @@
+@startuml
+
+class App extends Application {
+
+    + void start(Stage stage)
+    + void main()
+
+}
+
+class Item {
+
+    - SimpleStringProperty name
+    - SimpleStringProperty description
+    - SimpleStringProperty dueDate
+    - SimpleStringProperty status
+
+    + Item(String name)
+    + String getName()
+    + String getDescription()
+    + void setDescription(String description)
+    + String getDueDate()
+    + void setDueDate(String dueDate)
+    + String getStatus()
+    + void setStatus(String status)
+}
+
+class ItemViewController implements Initializable {
+
+    - Item selectedItem
+    - Label nameLabel
+    - Label descriptionLabel
+    - Label dueDateLabel
+    - Label statusLabel
+
+    + void initData(Item item)
+    + void initialize(URL url, ResourceBundle rb)
+}
+
+class ListViewController implements Initializable {
+
+    - TableView<Item> tableView
+    - TableColumn<Item, String> nameColumn
+    - TableColumn<Item, String> descriptionColumn
+    - TableColumn<Item, String> dueDateColumn
+    - TableColumn<Item, String> statusColumn
+    - TextField nameTextField
+    - TextField filterField
+    - Button detailedPersonViewButton
+    + ObservableList<Item>
+
+    + void changeDescriptionCellEvent(CellEditEvent edittedCell)
+    + void changeDueDateEvent(CellEditEvent edittedCell)
+    + void changeStatusEvent(CellEditEvent edittedCell)
+    + void userClickedOnTable()
+    + void changeSceneToDetailedItemView(ActionEvent event)
+    + void initialize(URL url, ResourceBundle rb)
+    + void filterButtonPushed(ActionEvent event)
+    + void deleteButtonPushed()
+    + void clearListButtonPushed(ActionEvent event)
+    + void newItemButtonPushed()
+}
+
+class StartMenuController {
+
+    + void changeScreenButtonPushed(ActionEvent event)
+
+}
+
+@enduml
